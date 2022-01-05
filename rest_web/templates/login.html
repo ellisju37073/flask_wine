@@ -1,0 +1,42 @@
+<html>
+   <body>
+      <form action = "http://localhost:5000/search" method = "GET">
+         <p>Search:</p>
+         <p><input type = "text" name = "swine" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+      <p></p>
+      <center>
+      {% for item in searched %}
+           <tr>
+              <td>{{item[0]}} {{item[1]}} {{item[2]}} {{item[3]}}</td>
+              <br>
+           </tr>
+      {% endfor %}
+      </center>
+      <form action = "http://localhost:5000/add" method = "POST">
+          <p>Add Wine:</p>
+         <p><input type = "text" name = "uwine" /></p>
+          <p>Add bottles:</p>
+         <p><input type = "text" name = "ubot" /></p>
+          <p>Add Type:</p>
+            <select name = "utype">
+            <option value = "cab_sauv" selected>cab_sauv</option>
+            <option value = "merlot">merlot</option>
+            <option value = "rose">rose</option /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+      <form action = "http://localhost:5000/minus" method = "POST">
+          <p>Minus Wine:</p>
+         <p><input type = "text" name = "uwinem" /></p>
+          <p>Minus bottles:</p>
+         <p><input type = "text" name = "ubotm" /></p>
+          <p>Minus Type:</p>
+            <select name = "utypem">
+            <option value = "cab_sauv" selected>cab_sauv</option>
+            <option value = "merlot">merlot</option>
+            <option value = "rose">rose</option /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+   </body>
+</html>
